@@ -1,0 +1,11 @@
+0000000000000000000000000000000000000000 ba94f00f1e43698eebf01c93fe81d80a5fdb659a saimaAnis21 <saima_rehman21@yahoo.com> 1618818688 +0500	commit (initial): Initial commit
+ba94f00f1e43698eebf01c93fe81d80a5fdb659a e8c022aa9b31d03ba60084d24f37df0c2bc91012 saimaAnis21 <saima_rehman21@yahoo.com> 1618819255 +0500	commit (merge): Initial commit
+e8c022aa9b31d03ba60084d24f37df0c2bc91012 e3a1ae8b90817ff2e3d9523c5d647dbdf2cd5bd8 saimaAnis21 <saima_rehman21@yahoo.com> 1618819416 +0500	commit: Initial commit
+e3a1ae8b90817ff2e3d9523c5d647dbdf2cd5bd8 f39868f0d8f5f42a45446279eb3ec238f9ef6567 saimaAnis21 <saima_rehman21@yahoo.com> 1618819578 +0500	commit: Initial commit
+f39868f0d8f5f42a45446279eb3ec238f9ef6567 b37581b70c804ae96a95969054a64bb2ab25b839 saimaAnis21 <saima_rehman21@yahoo.com> 1618821533 +0500	commit: Adding the webpack
+b37581b70c804ae96a95969054a64bb2ab25b839 b37581b70c804ae96a95969054a64bb2ab25b839 saimaAnis21 <saima_rehman21@yahoo.com> 1619195319 +0500	checkout: moving from main to development
+b37581b70c804ae96a95969054a64bb2ab25b839 b37581b70c804ae96a95969054a64bb2ab25b839 saimaAnis21 <saima_rehman21@yahoo.com> 1619195347 +0500	checkout: moving from development to todolist
+b37581b70c804ae96a95969054a64bb2ab25b839 dead7251bf846f19e631811237f2e0c5911a7d39 saimaAnis21 <saima_rehman21@yahoo.com> 1619195381 +0500	commit: Add form module, proj module, todo module and style sheets
+dead7251bf846f19e631811237f2e0c5911a7d39 b37581b70c804ae96a95969054a64bb2ab25b839 saimaAnis21 <saima_rehman21@yahoo.com> 1619195649 +0500	checkout: moving from todolist to development
+b37581b70c804ae96a95969054a64bb2ab25b839 dead7251bf846f19e631811237f2e0c5911a7d39 saimaAnis21 <saima_rehman21@yahoo.com> 1619195683 +0500	checkout: moving from development to todolist
+dead7251bf846f19e631811237f2e0c5911a7d39 48c89280ffbc3114b40a08a3b8524e3bf6f77baf saimaAnis21 <saima_rehman21@yahoo.com> 1619197112 +0500	commit: Populate the project drop down
