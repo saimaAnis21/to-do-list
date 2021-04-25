@@ -1,32 +1,12 @@
-import createForm from './form';
 import project from './proj_module';
 import toDO from './todoObj';
+import { content_div, todo_div, form_div, newitembtn, newprojdiv, newprojbtn, proj_input } from './DOMelements';
 
-let content_div = document.querySelector(".content");
 let projlist = []
-let form = createForm();
-let form_div = document.createElement("div");
-form_div.appendChild(form);
 
-let todo_div = document.createElement("div");
-todo_div.setAttribute("id","todo");
-
-let btn = document.createElement("button");
-    btn.setAttribute("id","todo-btn");
-    btn.innerText="Create new task";
-
-let newprojbtn = document.createElement("button");
-    newprojbtn.setAttribute("id","newproj-btn");
-    newprojbtn.innerText="Add New Project";
-
-let proj_input = document.createElement("input");
-proj_input.setAttribute("id","projinput");
-proj_input.setAttribute("type","text");
-
-content_div.appendChild(proj_input);
-content_div.appendChild(newprojbtn);
+content_div.appendChild(newprojdiv);
 content_div.appendChild(form_div);
-content_div.appendChild(btn);
+
 content_div.appendChild(todo_div);
 
 let proj_cat = document.getElementById("projcat");
@@ -110,7 +90,7 @@ let addProjItem = function(){
      let th5 = document.createElement("th");
      th5.innerText="Priority";
      let th6 = document.createElement("th");
-     th6.innerText="Update";
+     th6.innerText="Select for update";
      let th7 = document.createElement("th");
      th7.innerText="Delete";
      trh.appendChild(th1);
@@ -137,7 +117,42 @@ let addProjItem = function(){
              let td5= document.createElement("td");
              td5.innerText=`${projlist[i].todolist[j].priority}`;
              let td6= document.createElement("td");
-             td6.innerHTML = `<button>Update</button>`
+
+             let updbtn = document.createElement("button");
+             updbtn.hidden= true;
+             updbtn.setAttribute("class","updatebuttons");
+             updbtn.setAttribute("id",`updbtn${i}-${j}`);
+             updbtn.innerText="Update";
+             updbtn.addEventListener('click',() => {
+                projlist[i].todolist[j].title = document.getElementById("title").value;
+                projlist[i].todolist[j].desc = document.getElementById("desc").value;
+                projlist[i].todolist[j].ddate = document.getElementById("ddate").value;
+                projlist[i].todolist[j].priority = document.getElementById("priority").value;
+                newitembtn.hidden = false;
+                dispTaskItems();
+             });
+             let selectbtn = document.createElement("button");
+             selectbtn.setAttribute("id",`selectbtn${i}-${j}`);
+             selectbtn.innerText="Select";
+             selectbtn.addEventListener('click',() => {
+                 
+                 let updbuttons = document.getElementsByClassName("updatebuttons");
+                for(let x=0; x<updbuttons.length; x += 1){
+                    updbuttons[x].hidden=true;
+                }
+                document.getElementById("title").value = projlist[i].todolist[j].title;
+                document.getElementById("desc").value = projlist[i].todolist[j].desc;
+                document.getElementById("ddate").value = projlist[i].todolist[j].ddate;
+                document.getElementById("priority").value = projlist[i].todolist[j].priority;
+                
+                document.getElementById(`updbtn${i}-${j}`).hidden = false;
+                newitembtn.hidden = true;
+                
+             });
+
+             td6.appendChild(selectbtn);
+             td6.appendChild(updbtn);
+
              let td7= document.createElement("td");
              
              let delbtn = document.createElement("button");
@@ -164,14 +179,22 @@ let addProjItem = function(){
  
  }
 
-
-
 getProjects();
 populateProjcat();
 dispTaskItems();
 
-btn.addEventListener('click',() => {
-    addProjItem();    
+let submit = document.getElementById("submitbtn");
+submit.addEventListener('click',() => {
+    let title = document.getElementById("title").value;
+    let desc = document.getElementById("desc").value;
+    let ddate = document.getElementById("ddate").value;
+    let priority = document.getElementById("priority").value;
+
+    if(title == "" || desc == "" || ddate == ""){
+
+    }else{
+        addProjItem();
+    }
 });
 
 newprojbtn.addEventListener('click',() => {

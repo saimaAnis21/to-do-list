@@ -50,3 +50,42 @@
 .mt-10{
    margin-top: 10px;
 }
+
+.mb-10{
+   margin-bottom: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.border-deco{
+   border:black;
+   border-width: 2px;
+   border-style: solid;
+}
+
+.float-r{
+   float: right;
+}
+
+.w-100px{
+   width: 100px;
+}
+
+.w-50px{
+   width: 70px;
+}
+
+
+.w-120px{
+   width: 120px;
+}
+
+.p-10{
+   padding: 10px;
+}
+
+.txt-align-c{
+   text-align: center;
+}

@@ -1,6 +1,6 @@
 function createForm(){
     let form = document.createElement("form");
-    form.setAttribute("method","post");
+    //form.setAttribute("method","post");
 // Title
     let title_label= document.createElement("label");
     title_label.innerText="Title: ";
@@ -12,7 +12,7 @@ function createForm(){
     title_input.setAttribute("placeholder", "Title of Task");
     title_input.setAttribute("required","true");
     title_input.setAttribute("maxlength","10");
-    title_input.setAttribute("class","mr-10");
+    title_input.setAttribute("class","mr-10 w-100px");
 // desc
     let desc_label= document.createElement("label");
     desc_label.innerText="Description: ";
@@ -36,7 +36,7 @@ let date_label= document.createElement("label");
     date_input.setAttribute("type", "date");
     date_input.setAttribute("name", "date");    
     date_input.setAttribute("required","true");
-    date_input.setAttribute("class","mr-10");
+    date_input.setAttribute("class","mr-10 w-120px");
 
 //Priority
 let priority_label= document.createElement("label");
@@ -45,7 +45,7 @@ let priority_label= document.createElement("label");
 let priority_input = document.createElement("select"); 
     priority_input.setAttribute("id","priority");
     priority_input.setAttribute("name","priority");
-    priority_input.setAttribute("class","mr-10");
+    priority_input.setAttribute("class","mr-10 w-50px");
     
 let option_high = document.createElement("option");
     option_high.text = "High";
@@ -64,9 +64,22 @@ let option_low = document.createElement("option");
     option_low.value = "low";
     priority_input.add(option_low);
 
+let projlabel = document.createElement("label");
+projlabel.setAttribute("id","projlabel");
+projlabel.setAttribute("class","mr-10");
+projlabel.innerText="Select Project: ";
+
 let proj_cat = document.createElement("select");
 proj_cat.setAttribute("id","projcat");
+proj_cat.setAttribute("class","mr-10 ");
 
+let submitbtn = document.createElement("input");
+submitbtn.setAttribute("type","submit");
+submitbtn.setAttribute("id","submitbtn");
+submitbtn.value="Submit";
+
+    form.appendChild(projlabel);
+    form.appendChild(proj_cat); 
     form.appendChild(title_label);
     form.appendChild(title_input);
     form.appendChild(desc_label);
@@ -75,9 +88,8 @@ proj_cat.setAttribute("id","projcat");
     form.appendChild(date_input);
     form.appendChild(priority_label);
     form.appendChild(priority_input);
-    form.appendChild(proj_cat);
+    form.appendChild(submitbtn);
     
-
     return form;
 }
 
