@@ -1,8 +1,6 @@
-function project(proj_name){
-    
-    this.todolist = [];
-    this.proj_name = proj_name;
-
+function Project(projname) {
+  this.todolist = [];
+  this.proj_name = projname;
 }
 
-export default project;
+export default Project;
