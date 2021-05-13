@@ -3,6 +3,8 @@ import toDO from './todoObj';
 import {
   contentdiv, tododiv, formdiv, newitembtn, newprojdiv, newprojbtn, projinput,
 } from './DOMelements';
+import '../stylesheets/css-reset.css';
+import '../stylesheets/styles.css';
 
 let projlist = [];
 
