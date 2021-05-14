@@ -1,6 +1,6 @@
-import { getProjects, saveProjects } from './localstorage';
+import { GetProjects, SaveProjects } from './localstorage';
 import Project from './proj_module';
-import toDO from './todoObj';
+import ToDO from './todoObj';
 import {
   contentdiv, tododiv, formdiv, newitembtn, newprojdiv, newprojbtn, projinput,
 } from './DOMelements';
@@ -29,7 +29,7 @@ const populateProjcat = () => {
 const newProj = () => {
   const newproj = new Project(projinput.value);
   projlist.push(newproj);
-  saveProjects(projlist);
+  SaveProjects(projlist);
   populateProjcat();
 };
 
@@ -134,7 +134,7 @@ const dispTaskItems = () => {
 
 const deleteProjItem = (i, j) => {
   projlist[i].todolist.splice(j, 1);
-  saveProjects(projlist);
+  SaveProjects(projlist);
   dispTaskItems();
 };
 
@@ -144,18 +144,18 @@ const addProjItem = () => {
   const ddate = document.getElementById('ddate').value;
   const priority = document.getElementById('priority').value;
 
-  const todoitem = toDO(title, desc, ddate, priority);
+  const todoitem = ToDO(title, desc, ddate, priority);
   for (let i = 0; i < projlist.length; i += 1) {
     if (projlist[i].proj_name === projcat.value) {
       projlist[i].todolist.push(todoitem);
     }
   }
-  saveProjects(projlist);
+  SaveProjects(projlist);
   dispTaskItems();
 };
 
 
-projlist = getProjects();
+projlist = GetProjects();
 
 if (!projlist) {
   const proj = new Project('default');

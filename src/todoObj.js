@@ -1,5 +1,5 @@
-const toDo = (title, desc, ddate, priority) => ({
+const ToDo = (title, desc, ddate, priority) => ({
   title, desc, ddate, priority,
 });
 
-export default toDo;
+export default ToDo;

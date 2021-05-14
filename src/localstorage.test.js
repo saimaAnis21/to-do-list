@@ -1,7 +1,8 @@
 import Project from './proj_module';
 import ToDo from './todoObj';
+import { GetProjects, SaveProjects } from './localstorage';
 
-describe('The Project class returns the correct values', () => {
+describe('The local storage returns the saved values', () => {
   const title = 'cleaning';
   const desc = 'Clean the room';
   const ddate = '12/12/2021';
@@ -9,9 +10,12 @@ describe('The Project class returns the correct values', () => {
   const projname = 'TestProject';
   const task = new ToDo(title, desc, ddate, priority);
   const newproj = new Project(projname);
+  const projlist = [];
   newproj.todolist.push(task);
+  projlist.push(newproj);
+  SaveProjects(projlist);
 
-  it('Project name is returned correctly', () => {
-    expect(newproj.proj_name).toBe(projname);
+  it('GetProjects returns the saved values in local storage', () => {
+    expect(GetProjects()).toEqual(projlist);
   });
 });
