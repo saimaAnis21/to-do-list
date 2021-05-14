@@ -39,5 +39,4 @@ describe('The toDo class returns the stored values', () => {
   it('priority does not return null', () => {
     expect(Task.priority).not.toBeNull();
   });
-
 });
