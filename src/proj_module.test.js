@@ -14,4 +14,9 @@ describe('The Project class returns the correct values', () => {
   it('Project name is returned correctly', () => {
     expect(newproj.proj_name).toBe(projname);
   });
+
+  it('Project name does not return null', () => {
+    expect(newproj.proj_name).not.toBeNull();
+  });
+
 });

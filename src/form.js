@@ -1,7 +1,5 @@
 function createForm() {
   const form = document.createElement('form');
-  // form.setAttribute("method","post");
-  // Title
   const titlelabel = document.createElement('label');
   titlelabel.innerText = 'Title: ';
 

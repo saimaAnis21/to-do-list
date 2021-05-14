@@ -18,4 +18,9 @@ describe('The local storage returns the saved values', () => {
   it('GetProjects returns the saved values in local storage', () => {
     expect(GetProjects()).toEqual(projlist);
   });
+
+  it('GetProjects does not return null', () => {
+    expect(GetProjects()).not.toBeNull();
+  });
+
 });
