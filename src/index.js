@@ -1,3 +1,4 @@
+import { getProjects, saveProjects } from './localstorage';
 import Project from './proj_module';
 import toDO from './todoObj';
 import {
@@ -14,20 +15,6 @@ contentdiv.appendChild(formdiv);
 contentdiv.appendChild(tododiv);
 
 const projcat = document.getElementById('projcat');
-const saveProjects = () => {
-  const str = JSON.stringify(projlist);
-  localStorage.setItem('projlist', str);
-};
-
-const getProjects = () => {
-  const str = localStorage.getItem('projlist');
-  projlist = JSON.parse(str);
-  if (!projlist) {
-    projlist = [];
-    const proj = new Project('default');
-    projlist.push(proj);
-  }
-};
 
 const populateProjcat = () => {
   projcat.innerHTML = '';
@@ -42,7 +29,7 @@ const populateProjcat = () => {
 const newProj = () => {
   const newproj = new Project(projinput.value);
   projlist.push(newproj);
-  saveProjects();
+  saveProjects(projlist);
   populateProjcat();
 };
 
@@ -147,7 +134,7 @@ const dispTaskItems = () => {
 
 const deleteProjItem = (i, j) => {
   projlist[i].todolist.splice(j, 1);
-  saveProjects();
+  saveProjects(projlist);
   dispTaskItems();
 };
 
@@ -163,12 +150,18 @@ const addProjItem = () => {
       projlist[i].todolist.push(todoitem);
     }
   }
-  saveProjects();
+  saveProjects(projlist);
   dispTaskItems();
 };
 
 
-getProjects();
+projlist = getProjects();
+
+if (!projlist) {
+  const proj = new Project('default');
+  projlist.push(proj);
+}
+
 populateProjcat();
 dispTaskItems();
 
