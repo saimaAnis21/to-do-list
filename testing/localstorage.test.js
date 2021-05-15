@@ -22,4 +22,4 @@ describe('The local storage returns the saved values', () => {
   it('GetProjects does not return null', () => {
     expect(GetProjects()).not.toBeNull();
   });
-});add 
+});
