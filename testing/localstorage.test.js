@@ -1,6 +1,6 @@
-import Project from './proj_module';
-import ToDo from './todoObj';
-import { GetProjects, SaveProjects } from './localstorage';
+import Project from '../src/proj_module';
+import ToDo from '../src/todoObj';
+import { GetProjects, SaveProjects } from '../src/localstorage';
 
 describe('The local storage returns the saved values', () => {
   const title = 'cleaning';
@@ -22,4 +22,4 @@ describe('The local storage returns the saved values', () => {
   it('GetProjects does not return null', () => {
     expect(GetProjects()).not.toBeNull();
   });
-});
+});add 

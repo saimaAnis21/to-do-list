@@ -1,4 +1,4 @@
-import createForm from './form';
+import createForm from '../src/form';
 
 describe('Test the create form function', () => {
   const form = createForm();

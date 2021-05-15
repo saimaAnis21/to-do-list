@@ -1,4 +1,4 @@
-import ToDo from './todoObj';
+import ToDo from '../src/todoObj';
 
 describe('The toDo class returns the stored values', () => {
   const title = 'cleaning';

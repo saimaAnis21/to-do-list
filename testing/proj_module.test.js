@@ -1,5 +1,5 @@
-import Project from './proj_module';
-import ToDo from './todoObj';
+import Project from '../src/proj_module';
+import ToDo from '../src/todoObj';
 
 describe('The Project class returns the correct values', () => {
   const title = 'cleaning';
